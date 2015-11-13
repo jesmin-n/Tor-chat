@@ -7,6 +7,7 @@ import socket
 import ssl
 import struct
 import sys
+import binascii
 
 def usage(f=sys.stdout):
     f.write("""\
@@ -35,7 +36,14 @@ def connect(remote_address):
 def connect_with_socks(remote_address, socks_address):
     hostname, port = remote_address
     # TODO
-    raise NotImplementedError("connect_with_socks not implemented")
+    s = socket.socket(socket.AF_INET)
+    request = struct.pack('IIIppp', 0x04, 0x02, port, binascii.hexlify(socket.inet_aton("0.0.0.254")), "userid_doesntmatter".encode("utf-8", "strict"), (hostname).encode("utf-8",'strict'))
+    s.connect(socks_address)
+    s.send(request)
+    retval = s.recv(4096) #4096 was used arbitrarily from socket docs
+    if retval == 0:
+        raise socket.error
+    return s
 
 # Parse command line options.
 opts, args = getopt.gnu_getopt(sys.argv[1:], "",

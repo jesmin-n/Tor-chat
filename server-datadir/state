@@ -1,0 +1,23 @@
+# Tor state file last generated on 2015-11-08 01:39:18 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+EntryGuard unixio 28DD2A2049E0AE7AB53D6FA38FDB9EAD35BE1FE7 DirCache
+EntryGuardAddedBy 28DD2A2049E0AE7AB53D6FA38FDB9EAD35BE1FE7 0.2.6.10 2015-10-12 05:55:33
+EntryGuardPathBias 9.000000 9.000000 9.000000 0.000000 0.000000 0.000000
+EntryGuardPathUseBias 3.000000 3.000000
+EntryGuard Unnamed 3E53D3979DB07EFD736661C934A1DED14127B684 DirCache
+EntryGuardAddedBy 3E53D3979DB07EFD736661C934A1DED14127B684 0.2.6.10 2015-10-29 05:21:58
+EntryGuard RainbowGate 6B8FC389CD2DFEB23AD721175E810040DE9D324E DirCache
+EntryGuardAddedBy 6B8FC389CD2DFEB23AD721175E810040DE9D324E 0.2.6.10 2015-10-23 21:32:17
+TorVersion Tor 0.2.6.10 (git-58c51dc6087b0936)
+LastWritten 2015-11-08 09:39:18
+TotalBuildTimes 9
+CircuitBuildTimeBin 775 2
+CircuitBuildTimeBin 825 1
+CircuitBuildTimeBin 975 1
+CircuitBuildTimeBin 1125 1
+CircuitBuildTimeBin 1275 1
+CircuitBuildTimeBin 1575 1
+CircuitBuildTimeBin 1775 1
+CircuitBuildTimeBin 2275 1
