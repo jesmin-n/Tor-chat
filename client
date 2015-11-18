@@ -80,7 +80,13 @@ if options.use_tls:
     # TODO
     # Wrap remote_socket in TLS and assign the resulting socket.SSLSocket back
     # to the remote_socket variable.
-    raise NotImplementedError("TLS mode not implemented")
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+    context.verify_mode = ssl.CERT_REQUIRED
+    context.check_hostname = True
+    context.load_verify_locations(options.tls_trust_filename)
+    conn = context.wrap_socket(socket.socket(socket.AF_INET), server_hostname=remote_hostname)
+    conn.connect(("127.0.0.1", options.socks_port)) #hardcoding the socks address
+    cert = conn.getpeercert()
 
 # Unbuffer stdin, change to binary mode.
 sys.stdin = os.fdopen(sys.stdin.fileno(), "rb", 0)
