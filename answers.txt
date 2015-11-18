@@ -1,3 +1,7 @@
 1. If you have a copy of user 5's certificate, you can connect to the server and spoof as user 5 even though you're user 7.
 2. HiddenServiceAuthorizeClient
-3. 
+3. Integer values 0-2 correspond to three standard streams: stdin, stdout, and stderr. Since 3 is the next file handle available, it is the certificate.
+	
+	Source: http://unix.stackexchange.com/questions/41421/what-is-the-file-descriptor-3-assigned-by-default
+	
+4. It would be great if Tor had an option to automatically wrap TLS, which would improve exit node security.
