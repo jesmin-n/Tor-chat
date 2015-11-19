@@ -87,7 +87,7 @@ if options.use_tls:
     context.load_verify_locations(options.tls_trust_filename)
     remote_socket = context.wrap_socket(socket.socket(socket.AF_INET), server_hostname=remote_hostname)
     remote_socket.connect(("127.0.0.1", 443)) #hardcoding the socks address
-    #cert = remote_socket.getpeercert()
+    cert = remote_socket.getpeercert()
 
 # Unbuffer stdin, change to binary mode.
 sys.stdin = os.fdopen(sys.stdin.fileno(), "rb", 0)
