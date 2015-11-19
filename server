@@ -67,7 +67,7 @@ if options.use_tls:
     # TODO
     # Wrap listen_socket in TLS and assign the resulting socket.SSLSocket back
     # to the listen_socket variable.
-    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     context.verify_mode = ssl.CERT_NONE
     context.load_cert_chain(certfile="my.crt", keyfile="my.key")
 
@@ -79,6 +79,7 @@ while True:
             # s is listen_socket, accept a connection.
             try:
                 client_socket, _ = listen_socket.accept()
+                print("Connection was established to server")
             except ssl.SSLError:
                 continue
             CLIENT_SOCKETS.add(client_socket)

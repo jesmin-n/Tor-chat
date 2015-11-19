@@ -4,3 +4,4 @@ DataDirectory server-datadir
 HiddenServiceDir hs-chat-dir
 HiddenServicePort 5274
 SafeLogging 0
+Log notice stderr

@@ -37,10 +37,12 @@ def connect_with_socks(remote_address, socks_address):
     hostname, port = remote_address
     # TODO
     s = socket.socket(socket.AF_INET)
-    request = struct.pack('IIIppp', 0x04, 0x02, port, binascii.hexlify(socket.inet_aton("0.0.0.254")), "userid_doesntmatter".encode("utf-8", "strict"), (hostname).encode("utf-8",'strict'))
+    request = struct.pack('>bbhbbbb2s23s', 0x04, 0x01, port, 0x0, 0x0, 0x0, 0x1, "u".encode("utf-8", "strict"), (hostname).encode("utf-8",'strict'))
+    print(request)
     s.connect(socks_address)
     s.send(request)
-    retval = s.recv(4096) #4096 was used arbitrarily from socket docs
+    retval = s.recv(8) 
+    print(retval[1])
     if retval == 0:
         raise socket.error
     return s
@@ -80,13 +82,13 @@ if options.use_tls:
     # TODO
     # Wrap remote_socket in TLS and assign the resulting socket.SSLSocket back
     # to the remote_socket variable.
-    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     context.verify_mode = ssl.CERT_REQUIRED
     context.check_hostname = True
     context.load_verify_locations(options.tls_trust_filename)
-    conn = context.wrap_socket(socket.socket(socket.AF_INET), server_hostname=remote_hostname)
-    conn.connect(("127.0.0.1", options.socks_port)) #hardcoding the socks address
-    cert = conn.getpeercert()
+    remote_socket = context.wrap_socket(socket.socket(socket.AF_INET), server_hostname=remote_hostname)
+    remote_socket.connect(("127.0.0.1", 443)) #hardcoding the socks address
+    cert = remote_socket.getpeercert()
 
 # Unbuffer stdin, change to binary mode.
 sys.stdin = os.fdopen(sys.stdin.fileno(), "rb", 0)

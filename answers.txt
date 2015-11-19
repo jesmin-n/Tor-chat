@@ -1,4 +1,5 @@
-1. If you have a copy of user 5's certificate, you can connect to the server and spoof as user 5 even though you're user 7.
+1. If you have a copy of user 5's certificate, you can connect to the server and spoof as user 5 even though you're user 7. Another way is to take
+	advantage of the inputs not being sanitized. It might be difficult because the input is a file, but it is still possible. 
 2. HiddenServiceAuthorizeClient
 3. Integer values 0-2 correspond to three standard streams: stdin, stdout, and stderr. Since 3 is the next file handle available, it is the certificate.
 	
