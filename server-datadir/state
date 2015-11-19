@@ -1,11 +1,11 @@
-# Tor state file last generated on 2015-11-18 17:42:22 local time
+# Tor state file last generated on 2015-11-18 17:58:56 local time
 # Other times below are in UTC
 # You *do not* need to edit this file.
 
 EntryGuard unixio 28DD2A2049E0AE7AB53D6FA38FDB9EAD35BE1FE7 DirCache
 EntryGuardAddedBy 28DD2A2049E0AE7AB53D6FA38FDB9EAD35BE1FE7 0.2.6.10 2015-10-12 05:55:33
-EntryGuardPathBias 261.000000 256.000000 255.000000 1.000000 0.000000 2.000000
-EntryGuardPathUseBias 68.250000 68.250000
+EntryGuardPathBias 271.000000 266.000000 265.000000 1.000000 0.000000 2.000000
+EntryGuardPathUseBias 76.250000 76.250000
 EntryGuard Unnamed 3E53D3979DB07EFD736661C934A1DED14127B684 DirCache
 EntryGuardAddedBy 3E53D3979DB07EFD736661C934A1DED14127B684 0.2.6.10 2015-10-29 05:21:58
 EntryGuardPathBias 4.000000 4.000000 4.000000 0.000000 0.000000 1.000000
@@ -13,10 +13,10 @@ EntryGuardPathUseBias 1.000000 1.000000
 EntryGuard RainbowGate 6B8FC389CD2DFEB23AD721175E810040DE9D324E DirCache
 EntryGuardAddedBy 6B8FC389CD2DFEB23AD721175E810040DE9D324E 0.2.6.10 2015-10-23 21:32:17
 TorVersion Tor 0.2.6.10 (git-58c51dc6087b0936)
-LastWritten 2015-11-19 01:42:22
-TotalBuildTimes 181
+LastWritten 2015-11-19 01:58:56
+TotalBuildTimes 186
 CircuitBuildAbandonedCount 1
-CircuitBuildTimeBin 475 14
+CircuitBuildTimeBin 475 15
 CircuitBuildTimeBin 525 16
 CircuitBuildTimeBin 575 15
 CircuitBuildTimeBin 625 8
@@ -24,11 +24,11 @@ CircuitBuildTimeBin 675 14
 CircuitBuildTimeBin 725 7
 CircuitBuildTimeBin 775 14
 CircuitBuildTimeBin 825 12
-CircuitBuildTimeBin 875 10
+CircuitBuildTimeBin 875 11
 CircuitBuildTimeBin 925 9
-CircuitBuildTimeBin 975 11
-CircuitBuildTimeBin 1025 7
-CircuitBuildTimeBin 1075 8
+CircuitBuildTimeBin 975 12
+CircuitBuildTimeBin 1025 8
+CircuitBuildTimeBin 1075 9
 CircuitBuildTimeBin 1125 3
 CircuitBuildTimeBin 1175 6
 CircuitBuildTimeBin 1225 5
