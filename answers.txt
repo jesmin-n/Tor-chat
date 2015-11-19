@@ -1,8 +1,7 @@
-1. If you have a copy of user 5's certificate, you can connect to the server and spoof as user 5 even though you're user 7. Another way is to take
-	advantage of the inputs not being sanitized. It might be difficult because the input is a file, but it is still possible. 
+1. If you have a copy of user 5's certificate, you can connect to the server and spoof as user 5 even though you're user 7. Another way is to take advantage of the inputs not being sanitized. It might be difficult because the input is a file, but it is still possible.
+
 2. HiddenServiceAuthorizeClient
-3. Integer values 0-2 correspond to three standard streams: stdin, stdout, and stderr. Since 3 is the next file handle available, it is the certificate.
-	
-	Source: http://unix.stackexchange.com/questions/41421/what-is-the-file-descriptor-3-assigned-by-default
-	
-4. It would be great if Tor had an option to automatically wrap TLS, which would improve exit node security.
+
+3. Integer values 0-2 correspond to three standard streams: stdin, stdout, and stderr. When we connect with a socket, it also requires a file descriptor, so integer 3 will probably be assigned to the socket. Thus, we start with user number 4 because it is the next available integer.
+
+4. One of the greatest annoyances that we ran into was having to remove the lock file manually when running Tor again. It would be great if this was done automatically. One suggestion that we have for Tor developers is to include an option to automatically wrap TLS by default, which would improve exit node security for users.

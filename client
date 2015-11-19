@@ -85,8 +85,8 @@ if options.use_tls:
     context.verify_mode = ssl.CERT_REQUIRED
     context.check_hostname = True
     context.load_verify_locations(options.tls_trust_filename)
-    remote_socket = context.wrap_socket(socket.socket(socket.AF_INET), server_hostname=remote_hostname)
-    remote_socket.connect(("127.0.0.1", 443)) #hardcoding the socks address
+    remote_socket = context.wrap_socket(remote_socket, server_hostname=remote_hostname)
+    #remote_socket.connect(("127.0.0.1", 443)) #hardcoding the socks address
     cert = remote_socket.getpeercert()
 
 # Unbuffer stdin, change to binary mode.
